@@ -1,8 +1,6 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="en"> 
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.gstatic.com/">
@@ -74,7 +72,6 @@
 <h2 class="heading">Trending</h2>
 </div>
 </div> --> 
-<a href="./new.ejs">New article</a>
 <div class="row">
 <div class="col-lg-12">
 <div class="posts-slide-wrap">
@@ -163,14 +160,16 @@
 </div>
 </div>
 </div>
-<% articles.forEach(article =>{ %>
-
 
 <div class="section">
 <div class="container">
+	
 <div class="row g-5">
+	<% articles.forEach(article =>{ %>
 <div class="col-lg-4">
+	
 <div class="post-entry d-block small-post-entry-v">
+
 <div class="thumbnail">
 <a href="single.html">
 <img src="images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image" class="img-fluid">
@@ -178,7 +177,7 @@
 </div>
 <div class="content">
 <div class="post-meta mb-1">
-<a href="#" class="category"><%= article.category %></a>, <a href="#" class="category">Travel</a> &mdash;
+<a href="#" class="category"><%= article.category %></a> &mdash;
 <span class="date"><%= article.createAt.toLocaleDateString() %></span>
 </div>
 <h2 class="heading mb-3"><a href="single.html"><%= article.title %></a></h2>
@@ -195,12 +194,12 @@
 </div>
 </div>
 </div>
-
-</div>
-</div>
-</div>
-
 <% }) %>
+</div>
+</div>
+</div>
+
+
 
 <div class="site-footer">
 <div class="container">

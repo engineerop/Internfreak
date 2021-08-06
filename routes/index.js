@@ -1,55 +1,65 @@
 const express=require("express");
 const router=express.Router();
 const Article=require('./../models/article')
+const path = require("path");
+const app=express();
+app.use(express.static(path.join(__dirname,"public")));
 router.get('/',(req,res)=>{
     const articles=[{
         title: 'Test Article',
+        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
-        writtenBy:'Ayush'
+        writtenBy:'Intern Freak'
     },
     {
         title: 'Test Article',
+        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
-        writtenBy:'Ayush'
+        writtenBy:'Intern Freak'
     },
     {
         title: 'Test Article',
+        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
-        writtenBy:'Ayush'
+        writtenBy:'Intern Freak'
     },
     {
         title: 'Test Article',
+        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
-        writtenBy:'Ayush'
+        writtenBy:'Intern Freak'
     },
     {
         title: 'Test Article',
+        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
-        writtenBy:'Ayush'
+        writtenBy:'Intern Freak'
     },
     {
         title: 'Test Article',
+        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
-        writtenBy:'Ayush'
+        writtenBy:'Intern Freak'
     },
     {
         title: 'Test Article',
+        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
-        writtenBy:'Ayush'
+        writtenBy:'Intern Freak'
     }]
     res.render('articles/inde',{articles:articles});
 })

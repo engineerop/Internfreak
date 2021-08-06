@@ -20,6 +20,10 @@ const blogSchema=new mongoose.Schema({
   createdAt:{
     type:Date,
     required:true
+  },
+  img:  { 
+    data: Buffer, 
+    contentType: String
   }
 })
 module.exports=mongoose.model('blog',blogSchema)
