@@ -88,4 +88,8 @@ router.get('/:id',async (req,res)=>{
         console.log(e);
     }
 })
+<<<<<<< HEAD
 module.exports=router;
+=======
+module.exports=router;
+>>>>>>> 22d42511039a0f1d9579e411964de32bcbc97b91
