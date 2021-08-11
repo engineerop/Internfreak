@@ -77,6 +77,7 @@ router.post('/',async (req,res)=>{
    }
 })
 
+<<<<<<< HEAD
 router.get('/:id',async (req,res)=>{
     try{
     const article=await Article.findById(req.params.id)
@@ -88,4 +89,7 @@ router.get('/:id',async (req,res)=>{
         console.log(e);
     }
 })
+=======
+
+>>>>>>> 0e038e8b20630e99a46b8bb91129407334769a92
 module.exports=router;
