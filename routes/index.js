@@ -7,7 +7,6 @@ app.use(express.static(path.join(__dirname,"public")));
 router.get('/',(req,res)=>{
     const articles=[{
         title: 'Test Article',
-        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
@@ -15,7 +14,6 @@ router.get('/',(req,res)=>{
     },
     {
         title: 'Test Article',
-        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
@@ -23,7 +21,6 @@ router.get('/',(req,res)=>{
     },
     {
         title: 'Test Article',
-        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
@@ -31,7 +28,6 @@ router.get('/',(req,res)=>{
     },
     {
         title: 'Test Article',
-        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
@@ -39,7 +35,6 @@ router.get('/',(req,res)=>{
     },
     {
         title: 'Test Article',
-        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
@@ -47,7 +42,6 @@ router.get('/',(req,res)=>{
     },
     {
         title: 'Test Article',
-        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
@@ -55,7 +49,6 @@ router.get('/',(req,res)=>{
     },
     {
         title: 'Test Article',
-        src: "../public/images/post_lg_1.jpg",
         category:'Jobs',
         createAt:new Date(),
         description:'Test description',
@@ -63,28 +56,36 @@ router.get('/',(req,res)=>{
     }]
     res.render('articles/inde',{articles:articles});
 })
-router.get('/:id',(req,res)=>{
-    res.render('articles/new')
+router.get('/new',(req,res)=>{
+    res.render('articles/new',{article:new Article()})
 })
 router.post('/',async (req,res)=>{
-   let article =new Article({
+   let article = new Article({
        title: req.body.title,
        category: req.body.category,
-       createAt: req.body.createdAt,
        description: req.body.description,
        writtenBy: req.body.writtenBy
    })
    try{
+       console.log(article);
  article= await article.save();
- res.redirect(`/${article.id}`)
+ res.redirect(`/articles/${article.id}`)
    }
    catch(e){
        console.log(e);
     res.render('articles/new',{article:article})
    }
 })
-router.get('/new',(req,res)=>{
-    res.render('articles/new',{article})
-})
 
+router.get('/:id',async (req,res)=>{
+    try{
+    const article=await Article.findById(req.params.id)
+    if(article==null)
+    res.redirect('/')
+    res.render('articles/show',{article:article})
+    }
+    catch(e){
+        console.log(e);
+    }
+})
 module.exports=router;

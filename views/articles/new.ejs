@@ -16,23 +16,27 @@
         <form>
             <!-- Name input -->
             <div class="form-outline mb-4">
-              <input type="text" id="form4Example1" class="form-control" />
-              <label class="form-label" for="form4Example1">Title</label>
+              <input required type="text" id="title" name="title"class="form-control" <%= article.title %>  />
+              <label class="form-label" for="title">Title</label>
             </div>
             <div class="form-outline mb-4">
-                <input type="text" id="form4Example1" class="form-control" />
-                <label class="form-label" for="form4Example1">Category</label>
+                <input required type="text" id="category" name="category" <%= article.category %>/>
+                <label class="form-label" for="category">Category</label>
               </div>
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form4Example2" class="form-control" />
-              <label class="form-label" for="form4Example2">Description</label>
+              <input required type="text" id="description" name="description" class="form-control"<%= article.description %> />
+              <label class="form-label" for="description">Description</label>
             </div>
+            <!-- <div class="form-outline mb-4">
+              <input type="text" id="form4Example2" class="form-control" />
+              <label class="form-label" for="form4Example2">Created At</label>
+            </div> -->
           
             <!-- Message input -->
             <div class="form-outline mb-4">
-              <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-              <label class="form-label" for="form4Example3">writtenBy</label>
+              <input required type="text" id="writtenBy" name="writtenBy" class="form-control"<%= article.writtenBy %> />
+              <label class="form-label" for="writtenBy">writtenBy</label>
             </div>
           
             <!-- Submit button -->
