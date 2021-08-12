@@ -4,56 +4,8 @@ const Article=require('./../models/article')
 const path = require("path");
 const app=express();
 app.use(express.static(path.join(__dirname,"public")));
-router.get('/',(req,res)=>{
-    const articles=[{
-        title: 'Test Article',
-        category:'Jobs',
-        createAt:new Date(),
-        description:'Test description',
-        writtenBy:'Intern Freak'
-    },
-    {
-        title: 'Test Article',
-        category:'Jobs',
-        createAt:new Date(),
-        description:'Test description',
-        writtenBy:'Intern Freak'
-    },
-    {
-        title: 'Test Article',
-        category:'Jobs',
-        createAt:new Date(),
-        description:'Test description',
-        writtenBy:'Intern Freak'
-    },
-    {
-        title: 'Test Article',
-        category:'Jobs',
-        createAt:new Date(),
-        description:'Test description',
-        writtenBy:'Intern Freak'
-    },
-    {
-        title: 'Test Article',
-        category:'Jobs',
-        createAt:new Date(),
-        description:'Test description',
-        writtenBy:'Intern Freak'
-    },
-    {
-        title: 'Test Article',
-        category:'Jobs',
-        createAt:new Date(),
-        description:'Test description',
-        writtenBy:'Intern Freak'
-    },
-    {
-        title: 'Test Article',
-        category:'Jobs',
-        createAt:new Date(),
-        description:'Test description',
-        writtenBy:'Intern Freak'
-    }]
+router.get('/',async (req,res)=>{
+   const articles=await Article.find()
     res.render('articles/inde',{articles:articles});
 })
 router.get('/new',(req,res)=>{

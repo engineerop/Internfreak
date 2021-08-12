@@ -18,7 +18,9 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }))
 // Routes
 app.get("/", require("./routes/index"));
-// app.get("/new", require("./routes/index"));
+app.get("/new",function(req,res){
+  res.render("articles/newpost")
+})
 app.use('/articles',articleRouter)
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

@@ -29,7 +29,7 @@
 [class^="icon-"],
 [class*=" icon-"] {
   font-family: "icomoon" !important;
-  speak: none;
+  /* speak: none; */
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -4936,7 +4936,7 @@
 [class^="flaticon-"]:after,
 [class*=" flaticon-"]:after {
   font-family: Flaticon;
-  speak: none;
+  /* speak: none; */
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -5103,7 +5103,7 @@
   -ms-touch-action: none;
   touch-action: none;
   -webkit-text-size-adjust: 100%;
-  -webkit-backface-visibility: hidden;
+  /* -webkit-backface-visibility: hidden; */
   outline: 0;
   overflow: hidden;
 }
@@ -7930,13 +7930,13 @@ textarea.form-control {
   top: 40%;
 }
 .burger.active:before {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
+  /* -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg); */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=5);
 }
 .burger.active:after {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
+  /* -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg); */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-5);
 }
 .burger:focus {
