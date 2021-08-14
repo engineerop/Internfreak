@@ -76,7 +76,7 @@
 	<div class="container">
 		<a href="/" class="navbar-left"><img src="images/logo.png" alt="InternFreak logo" width="75" height="65"></a>
 
-	<a class="navbar-brand" href="index.html">InternFreak</a>
+	<a class="navbar-brand" href="/">InternFreak</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	<span class="fa fa-bars"></span> Menu
 	</button>
@@ -123,13 +123,15 @@
 		<div class="item">
 				<div class="post-entry d-lg-flex"*>
 				<div class="me-lg-5 thumbnail mb-4 mb-lg-0">
-				<a href="single.html">
+				<!-- <a href="single.html"> -->
 				<img src="images/slider1.png" alt="Image" class="img-fluid">
 				</a>
 				</div>
 				<div class="content align-self-center">
 				
-				<h2 class="heading"><a href="single.html">Your one stop solution for all your jobs and internship related info.</a></h2>
+				<h2 class="heading">
+					<!-- <a href="single.html"> -->
+						Your one stop solution for all your jobs and internship related info.</a></h2>
 				
 				<a href="#" class="post-author d-flex align-items-center">
 				
@@ -145,14 +147,16 @@
 <div class="item">
 <div class="post-entry d-lg-flex">
 <div class="me-lg-5 thumbnail mb-4 mb-lg-0">
-<a href="single.html">
+<!-- <a href="single.html"> -->
 		<img src="images/slider2.png" alt="Image" class="img-fluid">
 
 </a>
 </div>
 <div class="content align-self-center">
 
-<h2 class="heading"><a href="single.html">What we think, we become. 
+<h2 class="heading">
+	<!-- <a href="single.html"> -->
+		What we think, we become. 
 </a></h2>
 <br>
 <br>
@@ -173,13 +177,15 @@
 <div class="item">
 <div class="post-entry d-lg-flex">
 <div class="me-lg-5 thumbnail mb-4 mb-lg-0">
-<a href="single.html">
+<!-- <a href="single.html"> -->
 	
 <img src="images/slider3.png" alt="Image" class="img-fluid">
 </a>
 </div>
 <div class="content align-self-center">
-<h2 class="heading"><a href="single.html">We are launching new products very soon ..</a></h2>
+<h2 class="heading">
+	<!-- <a href="single.html"> -->
+		We are launching new products very soon ..</a></h2>
 <p>Stay Tuned !!</p>
 </div>
 </div>
@@ -205,7 +211,7 @@
 <div class="post-entry d-block small-post-entry-v">
 
 <div class="thumbnail">
-<a href="new.ejs">
+<a href="articles/<%=article.slug %>">
 	<img src="images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image" class="img-fluid">
 </a>
 </div>
@@ -214,7 +220,7 @@
 <a href="#" class="category"><%= article.category %></a> &mdash;
  <span class="date"><%= article.createdAt.toLocaleDateString() %></span> 
 </div>
-<h2 class="heading mb-3"><a href="single.html"><%= article.title %></a></h2>
+<h2 class="heading mb-3"><a href="articles/<%=article.slug %>"><%= article.title %></a></h2>
 <p><%= article.description %></p>
 <a href="#" class="post-author d-flex align-items-center">
 <div class="author-pic">
