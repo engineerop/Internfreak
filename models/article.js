@@ -1,29 +1,77 @@
 const mongoose =require('mongoose');
-
+const slugify=require('slugify')
 const blogSchema=new mongoose.Schema({
+  companyDetails:{
+    type:String
+    
+  },
+  heading:{
+    type:String
+    
+  },
+   designation:{
+    type:String
+    
+   },
+   qualification:{
+    type:String
+    ,
+   },
+   ctc:{
+     type:String
+     
+   },
+   location:{
+    type:String
+   },
   title:{
-      type:String,
-      required:true
+      type:String
+      
   },
   category:{
-    type:String,
-    required:true
+    type:String
+    
   },
   description:{
-    type:String,
-    required:true
+    type:String
+    
   },
-  writtenBy:{
-    type:String,
-    required:true
-  },
+  applyLink:{
+    type:String
+    ,
+   },
+   candidateShouldHave:{ 
+     type:String
+    ,
+   },
+  // writtenBy:{
+  //   type:String
+  //   
+  // },
   createdAt:{
     type:Date,
     default:Date.now()
+  },
+  slug:{
+    type:String,
+    required:true,
+    unique:true
   }
+  // },
   // img:  { 
   //   data: Buffer, 
   //   contentType: String
   // }
 })
-module.exports=mongoose.model('blog',blogSchema)
+blogSchema.pre('validate',function(next){
+  if(this.title)
+  {
+    this.slug=slugify(this.title,{
+      lower:true,
+      strict:true
+    })
+  }
+  next()
+})
+const blog =mongoose.model('blog',blogSchema)
+module.exports=blog

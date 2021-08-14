@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.gstatic.com/">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="/style.css" />
 <title>Internfreak</title>
 </head>
 <body>
@@ -19,20 +19,21 @@
 <div class="col-lg-8">
 <div class="text-center">
 <!-- <img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image" class="author-pic img-fluid rounded-circle mx-auto"> -->
-<img src="images/newpostlogo.png" alt="Image" class="img-fluid rounded mb-4">
+<img src="/images/newpostlogo.png" alt="Image" class="img-fluid rounded mb-4">
 
 </div>
-<span class="date d-block text-center small text-uppercase text-black-50 mb-5" >Posted on : July 2, 2020</span>
-<h2 class="heading text-center">Vinsol Is Hiring Interns</h2>
+<span class="date d-block text-center small text-uppercase text-black-50 mb-5" >Posted on : <%= article.createdAt.toLocaleDateString() %></span>
+<h2 class="heading text-center"><%= article.heading %></h2>
 
 
 <br>
 <!-- <img src="images/logo.png" alt="Image" class="img-fluid rounded mb-4"> -->
 <p>
-	Company details: Vinsol is a global, agile team of Rails, iOS and Android experts. We've created hundreds of great products for the world's best known brands and most innovative start-ups. We've been exceeding our clients' web and mobile development expectations for fourteen years.
+	<!-- Company details: Vinsol is a global, agile team of Rails, iOS and Android experts. We've created hundreds of great products for the world's best known brands and most innovative start-ups. We've been exceeding our clients' web and mobile development expectations for fourteen years. -->
+	<%= article.companydetails %>
 	<br>
 	<br>
-	<a href="www.google.com">Click Here To Apply </a>
+	<a href="<%= article.applyLink %>" >Click Here To Apply </a>
 
 
 <br>
@@ -42,10 +43,10 @@
 </blockquote> -->
 
 
-<div><h5>Designation :</h5> <p>Software Engineer (Rails/Android/iOS) </p></div>
-<h5>Qualification :</h5> <p>B.Tech / B.Sc/ B.E / B.C.A / M.C.A </p>
-<h5>CTC :</h5> <p>5-8 Lpa </p>
-<h5>Location :</h5> <p>Kolkata , West Bengal , India </p>
+<div><h5>Designation :</h5> <p><%= article.designation %> </p></div>
+<h5>Qualification :</h5> <p><%= article.qualification %></p>
+<h5>CTC :</h5> <p><%= article.ctc %> </p>
+<h5>Location :</h5> <p><%= article.location %> </p>
 
 
 
@@ -61,7 +62,7 @@
 <p>5. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
 </p>
 
-<a href="www.google.com">Click Here To Apply </a>
+<a href="<%= article.applyLink %>>Click Here To Apply </a>
 
 <div class="row mt-5 pt-5 border-top">
 <div class="col-12">
@@ -86,78 +87,34 @@
 </div>
 </div>
 <div class="row justify-content-center">
+	<% for(let i=0;i<=2;i++) {%>
 <div class="col-lg-12">
 <div class="post-entry d-md-flex small-horizontal mb-5">
 <div class="me-md-5 thumbnail mb-3 mb-md-0">
-<img src="images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image" class="img-fluid">
+<img src="/images/ximg_2.jpg.pagespeed.ic.tehDa3FPWy.jpg" alt="Image" class="img-fluid">
 </div>
 <div class="content">
 <div class="post-meta mb-3">
-<a href="#" class="category">Business</a>, <a href="#" class="category">Travel</a> &mdash;
-<span class="date">July 2, 2020</span>
+<a href="#" class="category"><%= articles[i].category %></a> &mdash;
+
+<span class="date"><%= articles[i].createdAt.toLocaleDateString() %></span>
 </div>
-<h2 class="heading"><a href="single.html">Your most unhappy customers are your greatest source of learning.</a></h2>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+<h2 class="heading"><a href="single.html"><%= articles[i].title %></a></h2>
+<p><%= articles[i].description %></p>
 <a href="#" class="post-author d-flex align-items-center">
 <div class="author-pic">
-<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image">
+<img src="/images/logo.png" alt="Image">
 </div>
 <div class="text">
-<strong>Sergy Campbell</strong>
-<span>Author, 26 published post</span>
+<strong>Intern Freak</strong>
+<span>CEO and Founder</span>
 </div>
 </a>
 </div>
 </div>
 </div>
-<div class="col-lg-12">
-<div class="post-entry d-md-flex small-horizontal mb-5">
-<div class="me-md-5 thumbnail mb-3 mb-md-0">
-<img src="images/ximg_3.jpg.pagespeed.ic.MzyTwPvJuu.jpg" alt="Image" class="img-fluid">
-</div>
-<div class="content">
-<div class="post-meta mb-3">
-<a href="#" class="category">Business</a>, <a href="#" class="category">Travel</a> &mdash;
-<span class="date">July 2, 2020</span>
-</div>
-<h2 class="heading"><a href="single.html">Your most unhappy customers are your greatest source of learning.</a></h2>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-<a href="#" class="post-author d-flex align-items-center">
-<div class="author-pic">
-<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image">
-</div>
-<div class="text">
-<strong>Sergy Campbell</strong>
-<span>Author, 26 published post</span>
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="col-lg-12">
-<div class="post-entry d-md-flex small-horizontal mb-5">
-<div class="me-md-5 thumbnail mb-3 mb-md-0">
-<img src="images/ximg_4.jpg.pagespeed.ic.5BNsTZBCHP.jpg" alt="Image" class="img-fluid">
-</div>
-<div class="content">
-<div class="post-meta mb-3">
-<a href="#" class="category">Business</a>, <a href="#" class="category">Travel</a> &mdash;
-<span class="date">July 2, 2020</span>
-</div>
-<h2 class="heading"><a href="single.html">Your most unhappy customers are your greatest source of learning.</a></h2>
-<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-<a href="#" class="post-author d-flex align-items-center">
-<div class="author-pic">
-<img src="images/xperson_1.jpg.pagespeed.ic.ku-D0yMWz5.jpg" alt="Image">
-</div>
-<div class="text">
-<strong>Sergy Campbell</strong>
-<span>Author, 26 published post</span>
-</div>
-</a>
-</div>
-</div>
-</div>
+
+<% } %>
 </div>
 </div>
 </div>
@@ -210,9 +167,9 @@
 <span class="visually-hidden">Loading...</span>
 </div>
 </div>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/tiny-slider.js"></script>
-<script src="js/glightbox.min.js%2baos.js%2bnavbar.js%2bcounter.js%2bcustom.js.pagespeed.jc.B7bFTsJZUK.js"></script><script>eval(mod_pagespeed_KpCH1a$C_m);</script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/tiny-slider.js"></script>
+<script src="/js/glightbox.min.js%2baos.js%2bnavbar.js%2bcounter.js%2bcustom.js.pagespeed.jc.B7bFTsJZUK.js"></script><script>eval(mod_pagespeed_KpCH1a$C_m);</script>
 <script>eval(mod_pagespeed_Ej3jj9tqUo);</script>
 <script>eval(mod_pagespeed_Pkx$Oz4Gi9);</script>
 <script>eval(mod_pagespeed_9lpIcAXJZV);</script>
@@ -226,7 +183,7 @@
 
 			gtag('config', 'UA-23581568-13');
 		</script>
-<script defer src="../../../static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"672182638869d597","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.7.0","si":10}'></script>
+<!-- <script defer src="../../../static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"672182638869d597","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.7.0","si":10}'></script> -->
 </body>
 
 <!-- Mirrored from preview.colorlib.com/theme/magdesign/single.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Jul 2021 03:58:28 GMT -->
